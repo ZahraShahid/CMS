@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teacher Sign up</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="Signup.css" />
+<script language="JavaScript" type="text/javaScript">
+
+function validate()
+{	
+	if ( document.user.name.value == "" ) {
+	                   document.getElementById('une').innerHTML = "Name required!";	
+		   document.user.name.focus();		
+		  return false;
+	    }else{
+	         document.getElementById('une').innerHTML="";
+	 }
+	if ( document.user.phone_no.value == "" ){
+	                   document.getElementById('une').innerHTML = "Phone Number required!";	
+		   document.user.phone_no.focus();		
+		  return false;
+	    }else{
+	         document.getElementById('une').innerHTML="";
+	 }
+	if ( document.user.email.value == "" ){
+		document.getElementById('une').innerHTML = "Email required!";
+                                document.user.email.focus();
+		return false;
+	}else{
+	         document.getElementById('une').innerHTML="";
+	 }
+	if(document.user.psw.value == ""){
+		   document.getElementById('une').innerHTML = "Password required!";
+		   document.user.psw.focus();
+		   return false;
+	   }else if(document.user.psw.value.length<8){  
+		   document.getElementById('une').innerHTML = "Password must be 8 characters long.";
+		   document.user.psw.focus();
+                                   return false;  
+                   }else{
+	         document.getElementById('une').innerHTML="";
+	 }
+                if( document.user.email.value != ""){
+   	   document.getElementById('une').innerHTML= "";
+	   var email1=document.user.uname.value;
+	   var a=0;
+	   var b=0;
+	    for(i=0;i<email1.length;i++){
+	        if(email1.charAt(i)!='@'){
+	           a=a+1;
+	        }	
+	        if(email1.charAt(i)!='.'){
+	           b=b+1;;
+	        }	
+	}
+	
+	if(a == email1.length){
+	      document.getElementById('une').innerHTML="Invalid format! Email must contain \'@\'";
+	      return false;
+	}
+                if(b == email1.length){
+	      document.getElementById('une').innerHTML="Invalid format! Email must contain \'.\'";
+	      return false;
+	}
+	else{
+	         document.getElementById('une').innerHTML="";
+	}
+	
+	if(email1.indexOf('@')<=0){
+	        document.getElementById('une').innerHTML="Invalid \'@\' position in email";
+	        return false;
+	}
+	
+	if(email1.charAt(email1.indexOf('@')+1)=='.'){
+	        document.getElementById('une').innerHTML="*Invalid \'.\' position in email";
+	        return false;
+	}
+	else{
+	       document.getElementById('une').innerHTML="";
+	}
+	
+	
+	if(email1.charAt((email1.length-1)-2)!='.' && email1.charAt((email1.length-1)-3)!='.'){
+	         document.getElementById('une').innerHTML="Invalid \'.\' position in email";
+	          return false;
+	}
+	else{
+	         document.getElementById("error_email1").innerHTML="";
+	}
+	if((email1.substring((email1.indexOf('@')+1),(email1.indexOf('@')+6))!="email")){
+	         document.getElementById('une').innerHTML="Email must contain \'email\'";
+	         return false;
+	}
+	else{
+	         document.getElementById('une').innerHTML="";
+	 }
+               }	
+}
+
+</script>
+</head>
+<body>
+
+    <form name="user" action="TeachersignUpHandler" method="POST" style="border:1px solid #ccc" onsubmit="return validate()">
+        <div class="container">
+            <img src="cms1.png" alt="CMS" />
+            <div class="heading">
+            <h1>Sign Up</h1>
+            </div>
+
+            <div class="f-line">
+                <input type="text" placeholder="Name" name="name" required>
+                 <div class="x-line">
+                      <input type="text" placeholder="Phone Number" name="phone_no" required>
+                     </div>
+            </div>
+
+
+            <div class="s-line">
+                <input type="text" placeholder="Email                                                                                @email.com" name="email" required>
+            </div>
+            <div class="s-line">
+                    <input type="password" placeholder="Password" name="psw" required>
+            </div>
+              <font color='red'> <div id="une"> </div> </font>
+            <div class="r-line">
+                  <p style="margin-left:5px;"><b>Please select your User type:</b></p>
+                  <input type="radio" id="1" name="user_type" value="1">
+                  <label for="1">1-Admin</label><br>
+                  <input type="radio" id="2" name="user_type" value="2" checked>
+                  <label for="2">2-Teacher</label><br>
+                  <input type="radio" id="3" name="user_type" value="3">
+                   <label for="3">3-Student</label>
+                      </div>
+            <div class="l-line">
+                 <br>
+                <p  style="margin-left:95px;"><button type="submit" class="signupbtn">Signup</button></p>
+            </div>
+        </div>
+    </form>
+
+    </body>
+
+</html>
+

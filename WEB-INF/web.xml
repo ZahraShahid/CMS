@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+	<servlet>
+		<servlet-name>MainServlet</servlet-name>
+		<servlet-class>MainServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>TeachersignUpHandler</servlet-name>
+		<servlet-class>TeachersignUpHandler</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>StudentsignUpHandler</servlet-name>
+		<servlet-class>StudentsignUpHandler</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AssignCourseServlet</servlet-name>
+		<servlet-class>AssignCourseServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CreateCourseServlet</servlet-name>
+		<servlet-class>CreateCourseServlet</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>MainServlet</servlet-name>
+		<url-pattern>/MainServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>TeachersignUpHandler</servlet-name>
+		<url-pattern>/TeachersignUpHandler</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>StudentsignUpHandler</servlet-name>
+		<url-pattern>/StudentsignUpHandler</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AssignCourseServlet</servlet-name>
+		<url-pattern>/AssignCourseServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CreateCourseServlet</servlet-name>
+		<url-pattern>/CreateCourseServlet</url-pattern>
+	</servlet-mapping>
+	
+</web-app>
